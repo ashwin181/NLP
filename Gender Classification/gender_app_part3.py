@@ -1,6 +1,6 @@
 import nltk, random
 
-# We will add error analysis now to our application to see how we can better improve our features function so the
+# error analysis now to our application to see how to better improve the features function so the
 # algorithm is better able to decide the correct gender
 
 
@@ -16,7 +16,7 @@ class GenderApp(object):
         self.classifier = nltk.NaiveBayesClassifier.train(self.train_set)
 
     def error_analysis(self):
-        # We are going to re-train our classifier and introduce a new set for error_analysis
+        #  re-train the classifier and introduce a new set for error_analysis
         self.train_set = self.feature_sets[2000:]
         self.dev_set = [(name, gender) for name, gender in self.names[:1000]]
         self.test_set = self.feature_sets[1000:2000]
@@ -33,7 +33,7 @@ class GenderApp(object):
 
     @staticmethod
     def gender_features_part2(word):
-        name = word.lower()  # let's normalise our input
+        name = word.lower()  # normalising the input
         features = dict()
         features['first_letter'] = name[0]
         features['last_letter'] = name[1]

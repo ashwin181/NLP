@@ -1,8 +1,7 @@
-# up till now we are familiar with Naive Buyes Algorithm, training set, testing set, accuracy
-# We now move to build a small application which will take input a name of a person and tell if the name is female or
+
+# To build a small application which will take input a name of a person and tell if the name is female or
 # male
-# In this video we will discuss choosing features which our algorithm will use to identify whether the person is male
-# or female
+# To analyse which algorithm will work
 
 
 # A very simple function which returns the last letter of the name which is provided as input
@@ -13,7 +12,7 @@ def gender_features_part1(word):
 #print(gender_features_part1('Sam'))
 
 
-# Now we get a sample of names using the nltk built-in module
+# Now to get a sample of names using the nltk built-in module
 
 from nltk.corpus import names as names_sample
 import nltk, random
@@ -54,7 +53,7 @@ classifier = nltk.NaiveBayesClassifier.train(train_set)
 #print(classifier.classify(gender_features_part1('Samy')))
 
 
-# Testing the accuracy of our classifier
+# To tes the accuracy of the classifier
 
 #print(nltk.classify.accuracy(classifier, test_set)*100)
 
@@ -62,7 +61,7 @@ classifier = nltk.NaiveBayesClassifier.train(train_set)
 
 
 
-# Seeing what our classifier has learned from our training set
+# Seeing what this classifier has learned from the training set
 
 # show_most_informative_features function
 
