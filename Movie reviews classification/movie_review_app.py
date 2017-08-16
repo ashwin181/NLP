@@ -28,6 +28,6 @@ test_set = feauture_sets[:100]
 
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 
-print(nltk.classify.accuracy(classifier, test_set))
+print('Accuracy:', nltk.classify.accuracy(classifier, test_set)*100)
 
 print(classifier.show_most_informative_features())
