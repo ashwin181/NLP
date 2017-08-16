@@ -27,7 +27,7 @@ class GenderApp(object):
             if guess != tag:
                 self.errors.append((name, tag, guess))
         print('Total Errors :', len(self.errors))
-        print('Accuracy :', 100 - (len(self.errors)/len(self.dev_set) * 100))
+        print('Accuracy by error analysis :', 100 - (len(self.errors)/len(self.dev_set) * 100))
         for name, tag, guess in self.errors:
             print('Name :', name, '- Tag :', tag, '- Guess:', guess)
 
@@ -55,3 +55,4 @@ class GenderApp(object):
 if __name__ == '__main__':
     app = GenderApp()
     app.error_analysis()
+    app.check_accuracy_of_the_classifier()

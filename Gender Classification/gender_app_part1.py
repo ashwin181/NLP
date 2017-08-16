@@ -23,18 +23,12 @@ names = [(name, 'male') for name in names_sample.words('male.txt')] + [(name, 'f
                                                                        names_sample.words('female.txt')]
 random.shuffle(names)
 
-
-# let's print the features for each name
-
-
-
-
-# Let's make a feature set for all the names
+#  feature set for all the names
 
 feature_sets = [(gender_features_part1(name.lower()), gender) for name, gender in names]
 
 
-# Making a testing data set and training data set
+# testing data set and training data set
 
 
 train_set = feature_sets[3000:]
@@ -42,29 +36,23 @@ train_set = feature_sets[3000:]
 
 test_set = feature_sets[:3000]
 
-# Now we use the Naive Buyes classifier and train it using the train set
+# use the Naive Buyes classifier and train it using the train set
 
 classifier = nltk.NaiveBayesClassifier.train(train_set)
 
 
-# Now we test it against names
+# test it against names
 
 
 #print(classifier.classify(gender_features_part1('Samy')))
 
 
-# To tes the accuracy of the classifier
-
-#print(nltk.classify.accuracy(classifier, test_set)*100)
-
-# nltk.classify.accuracy(ML Classifier, testing data set)
+# To test the accuracy of the classifier
 
 
+print('Accuracy of classifier is : ', nltk.classify.accuracy(classifier, test_set) * 100)
 
-# Seeing what this classifier has learned from the training set
+# most_informative_features function-default value=10
 
-# show_most_informative_features function
-
-# no of features we want to see - default value of 10
 
 print(classifier.show_most_informative_features())

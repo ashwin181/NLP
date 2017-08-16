@@ -30,11 +30,10 @@ class GenderApp(object):
     def check_accuracy_of_the_classifier(self):
         print('Accuracy of classifier is : ', nltk.classify.accuracy(self.classifier, self.test_set) * 100)
 
-    def see_learned_information_of_classifier(self, n=10):
-        self.classifier.show_most_informative_features(n)
+
+        self.classifier.show_most_informative_features(10)
 
 if __name__ == '__main__':
     app = GenderApp()
-    app.check_gender('Neo')
-    app.see_learned_information_of_classifier(20)
+    app.check_gender('man')
     app.check_accuracy_of_the_classifier()
